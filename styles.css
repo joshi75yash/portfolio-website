@@ -43,7 +43,6 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--blue); }
 .about h2, .work h2, .skills h2, .contact h2 { font-size: clamp(32px, 4vw, 61px); line-height: 1.1; letter-spacing: -.055em; margin: 0; }
 .about-copy > p { font-size: 17px; line-height: 1.75; max-width: 570px; margin: 35px 0; }
 
-/* Updated from 3 columns to 4 columns to fit the new Education tab */
 .facts { grid-column: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; border-top: 1px solid var(--line); padding-top: 25px; }
 .facts span { display: block; font: 11px 'DM Mono', monospace; text-transform: uppercase; margin-bottom: 10px; color: #596260; }
 .facts strong { font-size: 14px; }
@@ -79,9 +78,10 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--blue); }
 
 .skills-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
 .skills ul { list-style: none; padding: 0; margin: 0; }
-.skills li { border-top: 1px solid var(--line); padding: 17px 0; display: flex; justify-content: space-between; font-size: 15px; transition: padding-left 0.3s ease; }
-.skills li:hover { padding-left: 10px; color: var(--blue); cursor: default; }
-.skills li span { font: 11px 'DM Mono', monospace; color: #71807a; }
+.skills li { border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.skills li a { display: block; width: 100%; padding: 24px 0; font-size: 20px; font-weight: 600; transition: all 0.3s ease; }
+.skills li a:hover { padding-left: 15px; color: var(--blue); }
+.skills li span { font: 12px 'DM Mono', monospace; color: #71807a; pointer-events: none; }
 
 .contact { background: var(--lime); padding: 110px clamp(24px, 10vw, 160px) 45px; }
 .contact h2 { margin: 42px 0; }
