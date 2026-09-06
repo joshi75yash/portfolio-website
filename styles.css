@@ -1,174 +1,145 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional portfolio of Yash Joshi, B.Tech Computer Science and Engineering Student" />
-  <title>Yash Joshi | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+:root {
+  /* Premium Dark Theme */
+  --bg-main: #09090b;       /* Zinc 950 - Almost Black */
+  --bg-card: #18181b;       /* Zinc 900 */
+  --border: #27272a;        /* Zinc 800 */
+  --text-primary: #fafafa;  /* Zinc 50 */
+  --text-muted: #a1a1aa;    /* Zinc 400 */
   
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#home">Yash Joshi</a>
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-      </nav>
-      <a class="header-cta" href="#contact">Contact ↗</a>
-    </div>
-  </header>
+  /* Bleach Accents */
+  --accent-red: #ef4444;    /* Shinigami Red */
+  --accent-blue: #3b82f6;   /* Quincy Blue */
+}
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-glow red-glow"></div>
-      <div class="hero-glow blue-glow"></div>
-      
-      <!-- Mirrored Hollow Mask emerging from the right -->
-      <div class="hollow-mask-container" aria-hidden="true">
-        <img src="wp3189332-bleach-wallpaper-ichigo-hollow-mask.jpg" alt="Hollow Mask">
-      </div>
-      
-      <div class="hero-content">
-        <span class="badge">Portfolio 2026</span>
-        <h1>Building solutions<br />that just <span class="highlight">work.</span></h1>
-        <p>Hi, I am <strong>Yash Joshi</strong> — a B.Tech Computer Science student blending algorithmic problem-solving with modern, high-performance design.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#work">Explore Work</a>
-          <a class="btn-secondary" href="https://github.com/joshi75yash" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </section>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-main); color: var(--text-primary); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
-    <section class="about section" id="about">
-      <div class="section-inner">
-        <div class="section-header">
-          <span class="mono-label">01 // ABOUT ME</span>
-          <h2>Focused on human-centered digital work.</h2>
-          <p>I enjoy applying programming to real-world challenges. From system design to polished interfaces, I care about building reliable solutions with a clear purpose.</p>
-        </div>
-        
-        <div class="facts-grid">
-          <div class="fact-card">
-            <span>Location</span>
-            <strong>Dehradun, India</strong>
-          </div>
-          <div class="fact-card">
-            <span>Education</span>
-            <strong>Graphic Era University</strong>
-          </div>
-          <div class="fact-card">
-            <span>Focus</span>
-            <strong>Computer Science</strong>
-          </div>
-          <div class="fact-card">
-            <span>Email</span>
-            <strong>joshi75yash@gmail.com</strong>
-          </div>
-        </div>
-      </div>
-    </section>
+/* --- HEADER --- */
+.site-header { position: fixed; top: 0; width: 100%; height: 72px; z-index: 100; background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.header-inner { max-width: 1100px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+.brand { font-family: 'Caveat', cursive; font-size: 32px; font-weight: 700; color: var(--text-primary); transition: color 0.3s; }
+.brand:hover { color: var(--accent-red); }
+nav { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--text-muted); }
+nav a:hover { color: var(--text-primary); }
+.header-cta { font-size: 14px; font-weight: 600; padding: 8px 16px; background: var(--text-primary); color: var(--bg-main); border-radius: 20px; transition: opacity 0.3s; }
+.header-cta:hover { opacity: 0.8; }
 
-    <section class="work section" id="work">
-      <div class="section-inner">
-        <div class="section-header">
-          <span class="mono-label">02 // SELECTED WORK</span>
-          <h2>A few things I have made.</h2>
-        </div>
-        
-        <div class="project-grid">
-          
-          <!-- Project 1 (Zenith - Red Theme) -->
-          <a href="https://v0-task-app-enhancements.vercel.app/" target="_blank" rel="noreferrer" class="project-card red-theme">
-            <div class="card-art">
-              <h3>ZENITH</h3>
-            </div>
-            <div class="card-info">
-              <h4>Zenith Task App</h4>
-              <p>Modern UI/UX Enhancements</p>
-            </div>
-          </a>
+/* --- HERO --- */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 24px; overflow: hidden; }
+.hero-content { position: relative; z-index: 10; max-width: 800px; text-align: center; }
 
-          <!-- Project 2 (Evacuate - Blue Theme) -->
-          <a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer" class="project-card blue-theme">
-            <div class="card-art">
-              <h3>EVACUATE</h3>
-            </div>
-            <div class="card-info">
-              <h4>EVACUATE-PBL</h4>
-              <p>Emergency route & crowd management</p>
-            </div>
-          </a>
-          
-          <!-- Project 3 (Vehicle - Red Theme) -->
-          <a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer" class="project-card red-theme">
-            <div class="card-art">
-              <h3>C-SYS</h3>
-            </div>
-            <div class="card-info">
-              <h4>Vehicle Registration System</h4>
-              <p>C programming / CRUD architecture</p>
-            </div>
-          </a>
+/* Subtle Background Glows */
+.hero-glow { position: absolute; width: 500px; height: 500px; border-radius: 50%; filter: blur(120px); opacity: 0.15; z-index: 1; pointer-events: none; }
+.red-glow { background: var(--accent-red); top: -10%; left: -10%; }
+.blue-glow { background: var(--accent-blue); bottom: -10%; right: -10%; }
 
-          <!-- Project 4 (Portfolio - Blue Theme) -->
-          <a href="https://github.com/joshi75yash/portfolio-website" target="_blank" rel="noreferrer" class="project-card blue-theme">
-            <div class="card-art">
-              <h3>WEB</h3>
-            </div>
-            <div class="card-info">
-              <h4>Personal Portfolio</h4>
-              <p>Responsive web development</p>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="skills section" id="skills">
-      <div class="section-inner">
-        <div class="section-header">
-          <span class="mono-label">03 // CAPABILITIES</span>
-          <h2>Tools I use to build.</h2>
-        </div>
-        
-        <ul class="skills-list">
-          <li><a href="https://github.com/joshi75yash" target="_blank">C / C++ & Data Structures <span>↗</span></a></li>
-          <li><a href="https://github.com/joshi75yash/portfolio-website" target="_blank">HTML, CSS & JavaScript <span>↗</span></a></li>
-          <li><a href="https://codeforces.com/profile/joshi75yash" target="_blank">Competitive Programming <span>↗</span></a></li>
-          <li><a href="https://github.com/joshi75yash" target="_blank">Git, GitHub & Version Control <span>↗</span></a></li>
-          <li><a href="https://v0.dev" target="_blank">Generative UI & AI Tooling <span>↗</span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="section-inner text-center">
-        <span class="mono-label">04 // GET IN TOUCH</span>
-        <h2>Let's build something great.</h2>
-        <a class="email-huge" href="mailto:joshi75yash@gmail.com">joshi75yash@gmail.com</a>
-        
-        <div class="social-links">
-          <a href="https://github.com/joshi75yash" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/yash-joshi-686571361/" target="_blank">LinkedIn</a>
-          <a href="https://codeforces.com/profile/joshi75yash" target="_blank">Codeforces</a>
-        </div>
-      </div>
-    </section>
-  </main>
+/* --- Hollow Mask Blending Fix --- */
+.hollow-mask-container {
+  position: absolute;
+  right: -200px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 700px; 
+  z-index: 1; /* Sits behind the text */
+  pointer-events: none;
+  opacity: 0.20; /* Subtle watermark opacity */
   
-  <footer>
-    <div class="footer-inner">
-      <span>© 2026 Yash Joshi</span>
-      <span>Designed with precision.</span>
-    </div>
-  </footer>
+  /* MAGIC FADE: This erases the harsh left edge of the image */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+  mask-image: linear-gradient(to right, transparent 0%, black 40%);
+}
+.hollow-mask-container img {
+  width: 100%;
+  display: block;
+  transform: scaleX(-1);
+  mix-blend-mode: screen;
+}
+/* ---------------------------------- */
 
-</body>
-</html>
+.badge { display: inline-block; padding: 6px 16px; border: 1px solid var(--border); border-radius: 30px; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 32px; letter-spacing: 1px; text-transform: uppercase; }
+.hero h1 { font-size: clamp(48px, 8vw, 84px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px; }
+.highlight { color: var(--accent-red); }
+.hero-content p { font-size: clamp(16px, 2vw, 20px); color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
+
+.hero-actions { display: flex; gap: 16px; justify-content: center; }
+.btn-primary, .btn-secondary { padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; }
+.btn-primary { background: var(--text-primary); color: var(--bg-main); }
+.btn-primary:hover { background: var(--text-muted); }
+.btn-secondary { border: 1px solid var(--border); color: var(--text-primary); }
+.btn-secondary:hover { border-color: var(--text-muted); background: rgba(255,255,255,0.05); }
+
+/* --- LAYOUT --- */
+.section { padding: 120px 24px; border-bottom: 1px solid var(--border); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { margin-bottom: 64px; max-width: 600px; }
+.mono-label { display: block; font-family: monospace; font-size: 13px; color: var(--accent-red); margin-bottom: 16px; letter-spacing: 1px; }
+.section-header h2 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 24px; line-height: 1.2; }
+.section-header p { font-size: 18px; color: var(--text-muted); }
+
+/* --- ABOUT FACTS --- */
+.facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.fact-card { background: var(--bg-card); border: 1px solid var(--border); padding: 24px; border-radius: 12px; }
+.fact-card span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+.fact-card strong { font-size: 16px; font-weight: 600; }
+
+/* --- CLEAN PROJECT CARDS --- */
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.card-art { height: 260px; display: flex; align-items: center; justify-content: center; background: #111; }
+.card-art h3 { font-size: 32px; font-weight: 800; letter-spacing: 4px; color: rgba(255,255,255,0.8); }
+.card-info { padding: 32px; border-top: 1px solid var(--border); }
+.card-info h4 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.card-info p { font-size: 15px; color: var(--text-muted); }
+
+/* Card Hover States (Subtle Bleach Theme) */
+.project-card:hover { transform: translateY(-6px); }
+.red-theme:hover { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 10px 40px rgba(239, 68, 68, 0.1); }
+.red-theme:hover .card-art { background: radial-gradient(circle, rgba(239,68,68,0.15) 0%, #111 100%); }
+.red-theme:hover h3 { color: var(--accent-red); }
+
+.blue-theme:hover { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1); }
+.blue-theme:hover .card-art { background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, #111 100%); }
+.blue-theme:hover h3 { color: var(--accent-blue); }
+
+/* --- SKILLS LIST --- */
+.skills-list { list-style: none; }
+.skills-list li { border-bottom: 1px solid var(--border); }
+.skills-list li:first-child { border-top: 1px solid var(--border); }
+.skills-list a { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: var(--text-primary); }
+.skills-list a span { color: var(--text-muted); transition: transform 0.3s; }
+.skills-list a:hover { color: var(--text-primary); padding-left: 16px; padding-right: 16px; background: rgba(255,255,255,0.02); }
+.skills-list a:hover span { transform: translate(4px, -4px); color: var(--text-primary); }
+
+/* --- CONTACT --- */
+.text-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.email-huge { display: inline-block; font-size: clamp(28px, 5vw, 64px); font-weight: 800; letter-spacing: -0.02em; border-bottom: 2px solid transparent; padding-bottom: 8px; margin: 24px 0 48px; }
+.email-huge:hover { color: var(--accent-red); border-color: var(--accent-red); }
+
+.social-links { display: flex; gap: 32px; font-size: 15px; font-weight: 500; }
+.social-links a { color: var(--text-muted); }
+.social-links a:hover { color: var(--text-primary); }
+
+/* --- FOOTER --- */
+footer { padding: 32px 24px; border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  nav { display: none; }
+  .section { padding: 80px 24px; }
+  .facts-grid { grid-template-columns: 1fr; }
+  .card-art { height: 200px; }
+  .skills-list a { padding: 24px 0; font-size: 20px; }
+  
+  /* Scale down mask on mobile */
+  .hollow-mask-container { width: 450px; right: -150px; opacity: 0.1; }
+  
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+}
