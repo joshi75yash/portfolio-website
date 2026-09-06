@@ -1,150 +1,118 @@
 :root {
-  /* BLEACH: TYBW Official Palette */
-  --bg-dark: #0a0a0c;       /* Pitch Black */
-  --text-pure: #ffffff;     /* Bleach Logo White */
-  --shinigami-red: #c90a1b; /* Aggressive Crimson */
-  --quincy-blue: #1434d4;   /* Deep Electric Blue */
-  --text-muted: #88888c;    /* Ash Gray */
-  --line: rgba(255, 255, 255, 0.1); 
+  /* Premium Dark Theme */
+  --bg-main: #09090b;       /* Zinc 950 - Almost Black */
+  --bg-card: #18181b;       /* Zinc 900 */
+  --border: #27272a;        /* Zinc 800 */
+  --text-primary: #fafafa;  /* Zinc 50 */
+  --text-muted: #a1a1aa;    /* Zinc 400 */
+  
+  /* Bleach Accents */
+  --accent-red: #ef4444;    /* Shinigami Red */
+  --accent-blue: #3b82f6;   /* Quincy Blue */
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg-dark); color: var(--text-pure); font-family: 'Manrope', Arial, sans-serif; overflow-x: hidden; }
+body { background: var(--bg-main); color: var(--text-primary); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; }
 a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
-.site-header { height: 82px; padding: 0 clamp(24px, 6vw, 96px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: relative; z-index: 10; background: var(--bg-dark); }
+/* --- HEADER --- */
+.site-header { position: fixed; top: 0; width: 100%; height: 72px; z-index: 100; background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.header-inner { max-width: 1100px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+.brand { font-family: 'Caveat', cursive; font-size: 32px; font-weight: 700; color: var(--text-primary); transition: color 0.3s; }
+.brand:hover { color: var(--accent-red); }
+nav { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--text-muted); }
+nav a:hover { color: var(--text-primary); }
+.header-cta { font-size: 14px; font-weight: 600; padding: 8px 16px; background: var(--text-primary); color: var(--bg-main); border-radius: 20px; transition: opacity 0.3s; }
+.header-cta:hover { opacity: 0.8; }
 
-/* The Caveat Signature */
-.brand.signature { font-family: 'Caveat', cursive; font-size: 42px; font-weight: 700; letter-spacing: 2px; color: var(--text-pure); text-shadow: 0 0 10px rgba(255,255,255,0.2); transition: color 0.3s, text-shadow 0.3s; }
-.brand.signature:hover { color: var(--shinigami-red); text-shadow: 0 0 15px var(--shinigami-red); }
+/* --- HERO --- */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 24px; overflow: hidden; }
+.hero-content { position: relative; z-index: 10; max-width: 800px; text-align: center; }
 
-nav { display: flex; gap: 28px; font: 700 12px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
-nav a:hover { color: var(--quincy-blue); text-shadow: 0 0 8px var(--quincy-blue); }
+/* Subtle Background Glows (Replaces messy slashes) */
+.hero-glow { position: absolute; width: 500px; height: 500px; border-radius: 50%; filter: blur(120px); opacity: 0.15; z-index: 1; pointer-events: none; }
+.red-glow { background: var(--accent-red); top: -10%; left: -10%; }
+.blue-glow { background: var(--accent-blue); bottom: -10%; right: -10%; }
 
-.header-cta { font: 700 12px 'DM Mono', monospace; text-transform: uppercase; border-bottom: 2px solid var(--text-pure); padding-bottom: 3px; transition: color 0.3s, border-color 0.3s; }
-.header-cta:hover { color: var(--shinigami-red); border-color: var(--shinigami-red); }
+.badge { display: inline-block; padding: 6px 16px; border: 1px solid var(--border); border-radius: 30px; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 32px; letter-spacing: 1px; text-transform: uppercase; }
+.hero h1 { font-size: clamp(48px, 8vw, 84px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px; }
+.highlight { color: var(--accent-red); }
+.hero-content p { font-size: clamp(16px, 2vw, 20px); color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
 
-/* --- HERO SECTION & TYBW CLASH BACKGROUND --- */
-.hero { min-height: 720px; padding: 92px clamp(24px, 10vw, 160px) 60px; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
-.hero-content { position: relative; z-index: 5; }
+.hero-actions { display: flex; gap: 16px; justify-content: center; }
+.btn-primary, .btn-secondary { padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; }
+.btn-primary { background: var(--text-primary); color: var(--bg-main); }
+.btn-primary:hover { background: var(--text-muted); }
+.btn-secondary { border: 1px solid var(--border); color: var(--text-primary); }
+.btn-secondary:hover { border-color: var(--text-muted); background: rgba(255,255,255,0.05); }
 
-/* The Red & Blue Diagonal Background */
-.tybw-clash { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.85; }
-.slash-red { position: absolute; width: 60%; height: 200%; background: var(--shinigami-red); top: -50%; left: -20%; transform: rotate(20deg); filter: blur(40px); opacity: 0.25; mix-blend-mode: color-dodge; }
-.slash-blue { position: absolute; width: 60%; height: 200%; background: var(--quincy-blue); top: -50%; right: -20%; transform: rotate(20deg); filter: blur(40px); opacity: 0.25; mix-blend-mode: color-dodge; }
+/* --- LAYOUT --- */
+.section { padding: 120px 24px; border-bottom: 1px solid var(--border); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { margin-bottom: 64px; max-width: 600px; }
+.mono-label { display: block; font-family: monospace; font-size: 13px; color: var(--accent-red); margin-bottom: 16px; letter-spacing: 1px; }
+.section-header h2 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 24px; line-height: 1.2; }
+.section-header p { font-size: 18px; color: var(--text-muted); }
 
-.eyebrow, .section-number { font: 700 11px 'DM Mono', monospace; letter-spacing: .15em; color: var(--text-muted); }
-.hero h1 { font-size: clamp(52px, 8.5vw, 130px); line-height: .95; letter-spacing: -.05em; font-weight: 800; margin: 40px 0 60px; max-width: 1000px; text-transform: uppercase; }
-.hero h1 em { font-family: 'Manrope', sans-serif; font-weight: 800; font-style: normal; -webkit-text-stroke: 2px var(--text-pure); color: transparent; }
+/* --- ABOUT FACTS --- */
+.facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.fact-card { background: var(--bg-card); border: 1px solid var(--border); padding: 24px; border-radius: 12px; }
+.fact-card span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+.fact-card strong { font-size: 16px; font-weight: 600; }
 
-.hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 30px; max-width: 850px; }
-.hero-bottom p { font-size: 16px; line-height: 1.6; max-width: 400px; margin: 0; color: var(--text-pure); font-weight: 500; }
+/* --- CLEAN PROJECT CARDS --- */
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.card-art { height: 260px; display: flex; align-items: center; justify-content: center; background: #111; }
+.card-art h3 { font-size: 32px; font-weight: 800; letter-spacing: 4px; color: rgba(255,255,255,0.8); }
+.card-info { padding: 32px; border-top: 1px solid var(--border); }
+.card-info h4 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.card-info p { font-size: 15px; color: var(--text-muted); }
 
-.scroll-link, .text-link { font: 700 13px 'DM Mono', monospace; text-transform: uppercase; border-bottom: 2px solid var(--text-pure); padding-bottom: 6px; white-space: nowrap; display: inline-flex; align-items: center; }
-.scroll-link:hover { color: var(--quincy-blue); border-color: var(--quincy-blue); }
-.text-link:hover { color: var(--shinigami-red); border-color: var(--shinigami-red); }
-.scroll-link span, .text-link span { font-size: 18px; margin-left: 8px; transition: transform 0.3s ease; }
-.scroll-link:hover span { transform: translateY(5px); }
-.text-link:hover span { transform: translateX(5px); }
+/* Card Hover States (Subtle Bleach Theme) */
+.project-card:hover { transform: translateY(-6px); }
+.red-theme:hover { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 10px 40px rgba(239, 68, 68, 0.1); }
+.red-theme:hover .card-art { background: radial-gradient(circle, rgba(239,68,68,0.15) 0%, #111 100%); }
+.red-theme:hover h3 { color: var(--accent-red); }
 
-/* --- SECTIONS --- */
-.section { padding: 120px clamp(24px, 10vw, 160px); display: grid; grid-template-columns: 180px 1fr; gap: 30px; border-bottom: 1px solid var(--line); position: relative; z-index: 5; background: var(--bg-dark); }
-.about-copy { max-width: 760px; }
-.about h2, .work h2, .skills h2, .contact h2 { font-size: clamp(34px, 4.5vw, 64px); line-height: 1.05; letter-spacing: -.04em; font-weight: 800; margin: 0; }
-.about-copy > p { font-size: 18px; line-height: 1.7; max-width: 600px; margin: 40px 0; color: var(--text-muted); }
+.blue-theme:hover { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1); }
+.blue-theme:hover .card-art { background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, #111 100%); }
+.blue-theme:hover h3 { color: var(--accent-blue); }
 
-.facts { grid-column: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; border-top: 1px solid var(--line); padding-top: 30px; }
-.facts span { display: block; font: 700 11px 'DM Mono', monospace; text-transform: uppercase; margin-bottom: 10px; color: var(--text-muted); letter-spacing: .1em; }
-.facts strong { font-size: 15px; font-weight: 700; color: var(--text-pure); }
-
-.work-intro { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 50px; }
-.work-intro p { max-width: 250px; font-size: 14px; line-height: 1.6; color: var(--text-muted); }
-
-/* --- PROJECT CARDS: RED vs BLUE FACTIONS --- */
-.project-grid { grid-column: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.project { cursor: pointer; }
-.project-art { height: 380px; padding: 24px; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; border: 1px solid rgba(255,255,255,0.05); }
-.project:hover .project-art { transform: translateY(-10px); }
-.project-art > span { font: 700 14px 'DM Mono', monospace; color: var(--bg-dark); background: var(--text-pure); padding: 4px 10px; z-index: 2; position: relative; display: inline-block; }
-
-/* Faction Styling */
-.faction-red { background: #1a0a0a; border-bottom: 4px solid var(--shinigami-red); }
-.faction-red:hover { box-shadow: 0 20px 40px rgba(201, 10, 27, 0.15); }
-.faction-blue { background: #080a14; border-bottom: 4px solid var(--quincy-blue); }
-.faction-blue:hover { box-shadow: 0 20px 40px rgba(20, 52, 212, 0.2); }
-.faction-red-alt { background: var(--shinigami-red); }
-.faction-red-alt:hover { box-shadow: 0 20px 40px rgba(201, 10, 27, 0.3); }
-.faction-blue-alt { background: var(--quincy-blue); }
-.faction-blue-alt:hover { box-shadow: 0 20px 40px rgba(20, 52, 212, 0.35); }
-
-/* Card Internals */
-.zenith-box { width: 75%; height: 60%; background: var(--text-pure); position: absolute; right: 8%; bottom: 12%; padding: 28px; color: var(--bg-dark); transition: transform 0.4s ease; box-shadow: -15px 15px 0 rgba(201,10,27,0.3); }
-.project:hover .zenith-box { transform: scale(1.05); }
-.zenith-box i { display: block; width: 50px; height: 6px; background: var(--shinigami-red); margin-bottom: 25px; }
-.zenith-box b { font-size: clamp(24px, 3vw, 40px); line-height: .9; font-weight: 800; display: block; }
-
-.mini-window { width: 75%; height: 60%; background: var(--text-pure); position: absolute; left: 10%; top: 20%; padding: 24px; box-shadow: 15px 15px 0 rgba(20,52,212,0.3); color: var(--bg-dark); }
-.mini-window i { width: 8px; height: 8px; background: var(--quincy-blue); display: inline-block; margin-right: 6px; }
-.mini-window b { display: block; font-size: clamp(24px, 3vw, 40px); line-height: .9; font-weight: 800; margin-top: 40px; }
-
-.phone { position: absolute; width: 160px; height: 300px; background: var(--bg-dark); border: 4px solid var(--text-pure); bottom: -30px; left: calc(50% - 80px); padding: 35px 20px; color: var(--text-pure); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-.phone b { font-size: 28px; line-height: .95; font-weight: 800; }
-.phone i { display: block; width: 60px; height: 6px; background: var(--shinigami-red); margin-top: 25px; }
-
-.poster { position: absolute; inset: 40px; background: var(--bg-dark); padding: 30px; color: var(--text-pure); transform: rotate(4deg); transition: transform 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-.project:hover .poster { transform: rotate(0deg) scale(1.05); }
-.poster b { font-size: clamp(28px, 3.5vw, 48px); line-height: .85; font-weight: 800; text-transform: uppercase; }
-
-.project-meta { padding-top: 20px; }
-.project-meta h3 { font-size: 18px; margin: 0 0 6px; font-weight: 700; }
-.project-meta p { margin: 0; font: 12px 'DM Mono', monospace; color: var(--text-muted); }
-
-/* --- SKILLS --- */
-.skills-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-.tybw-skills { list-style: none; padding: 0; margin: 0; }
-.tybw-skills li { border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
-.tybw-skills li a { display: block; width: 100%; padding: 28px 0; font-size: 22px; font-weight: 700; transition: all 0.3s ease; }
-/* Alternating hover colors for Red/Blue clash */
-.tybw-skills li:nth-child(odd) a:hover { padding-left: 15px; color: var(--shinigami-red); text-shadow: 0 0 10px rgba(201,10,27,0.4); }
-.tybw-skills li:nth-child(even) a:hover { padding-left: 15px; color: var(--quincy-blue); text-shadow: 0 0 10px rgba(20,52,212,0.4); }
-.tybw-skills li span { font: 13px 'DM Mono', monospace; color: var(--text-muted); font-weight: 700; pointer-events: none; }
+/* --- SKILLS LIST --- */
+.skills-list { list-style: none; }
+.skills-list li { border-bottom: 1px solid var(--border); }
+.skills-list li:first-child { border-top: 1px solid var(--border); }
+.skills-list a { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: var(--text-primary); }
+.skills-list a span { color: var(--text-muted); transition: transform 0.3s; }
+.skills-list a:hover { color: var(--text-primary); padding-left: 16px; padding-right: 16px; background: rgba(255,255,255,0.02); }
+.skills-list a:hover span { transform: translate(4px, -4px); color: var(--text-primary); }
 
 /* --- CONTACT --- */
-.contact { background: var(--bg-dark); padding: 120px clamp(24px, 10vw, 160px) 60px; border-bottom: none; }
-.contact h2 { margin: 42px 0; }
-.email { display: inline-block; font-size: clamp(26px, 3.5vw, 56px); font-weight: 800; border-bottom: 3px solid var(--text-pure); padding-bottom: 10px; transition: color 0.3s ease, border-color 0.3s ease; }
-.email:hover { color: var(--shinigami-red); border-color: var(--shinigami-red); }
-.email span { font-family: 'DM Mono', monospace; font-weight: 400; }
+.text-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.email-huge { display: inline-block; font-size: clamp(28px, 5vw, 64px); font-weight: 800; letter-spacing: -0.02em; border-bottom: 2px solid transparent; padding-bottom: 8px; margin: 24px 0 48px; }
+.email-huge:hover { color: var(--accent-red); border-color: var(--accent-red); }
 
-.socials { display: flex; gap: 30px; margin-top: 100px; font: 700 12px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .05em; }
-.socials a { border-bottom: 2px solid var(--text-pure); padding-bottom: 6px; transition: color 0.3s ease, border-color 0.3s ease; }
-.socials a:hover { color: var(--quincy-blue); border-color: var(--quincy-blue); }
+.social-links { display: flex; gap: 32px; font-size: 15px; font-weight: 500; }
+.social-links a { color: var(--text-muted); }
+.social-links a:hover { color: var(--text-primary); }
 
-footer { background: #050506; padding: 30px clamp(24px, 10vw, 160px); display: flex; justify-content: space-between; font: 700 11px 'DM Mono', monospace; color: var(--text-muted); letter-spacing: .1em; }
+/* --- FOOTER --- */
+footer { padding: 32px 24px; border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); }
 
-@media (max-width: 1024px) {
-  .facts { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-  .skills-wrap { display: block; }
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { grid-template-columns: 1fr; }
 }
 
-@media(max-width: 760px) {
-  .site-header nav, .header-cta { display: none; }
-  .hero { min-height: 600px; padding-top: 70px; }
-  
-  .slash-red { width: 100%; top: -20%; left: -50%; }
-  .slash-blue { width: 100%; top: 20%; right: -50%; }
-
-  .hero h1 { margin: 50px 0; font-size: 52px; }
-  .hero h1 em { -webkit-text-stroke: 1px var(--text-pure); }
-  .hero-bottom, .work-intro { display: block; }
-  .scroll-link { display: inline-flex; margin-top: 35px; }
-  
-  .section { display: block; padding-top: 80px; padding-bottom: 80px; }
-  .section-number { margin: 0 0 30px; }
-  .facts { grid-template-columns: 1fr; margin-top: 50px; }
-  .project-grid { grid-template-columns: 1fr; }
-  .project-art { height: 320px; }
-  .skills h2 { margin-bottom: 40px; }
-  .socials { margin-top: 80px; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  nav { display: none; }
+  .section { padding: 80px 24px; }
+  .facts-grid { grid-template-columns: 1fr; }
+  .card-art { height: 200px; }
+  .skills-list a { padding: 24px 0; font-size: 20px; }
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
 }
