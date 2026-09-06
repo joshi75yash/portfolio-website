@@ -26,9 +26,9 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--lime); }
 
 .hero { min-height: 690px; padding: 92px clamp(24px, 10vw, 160px) 60px; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
 .eyebrow, .section-number { font: 500 11px 'DM Mono', monospace; letter-spacing: .09em; color: rgba(255,255,255,0.6); }
-.hero h1 { font-size: clamp(48px, 7.6vw, 116px); line-height: .98; letter-spacing: -.07em; margin: 50px 0 80px; max-width: 950px; }
+.hero h1 { font-size: clamp(48px, 7.6vw, 116px); line-height: .98; letter-spacing: -.07em; margin: 50px 0 80px; max-width: 950px; position: relative; z-index: 2; }
 .hero h1 em, .contact h2 em { font-family: Georgia, serif; font-weight: 400; }
-.hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 30px; max-width: 850px; }
+.hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 30px; max-width: 850px; position: relative; z-index: 2; }
 .hero-bottom p { font-size: 15px; line-height: 1.65; max-width: 370px; margin: 0; color: rgba(255,255,255,0.8); }
 
 .scroll-link, .text-link { font: 500 12px 'DM Mono', monospace; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 6px; white-space: nowrap; display: inline-flex; align-items: center; }
@@ -37,37 +37,24 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--lime); }
 .scroll-link:hover span { transform: translateY(4px); }
 .text-link:hover span { transform: translateX(4px); }
 
-/* --- NO CIRCLE: Static Glowing Sword Slash & Kanji --- */
-.bankai-graphic {
+/* --- Hollow Mask Image Styling --- */
+.hollow-mask-container {
   position: absolute;
-  right: 10%;
+  right: -100px; /* Pulls it off the right edge so it merges in */
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  pointer-events: none;
-  z-index: 0;
+  width: 550px; /* Adjust size of mask */
+  z-index: 1; /* Puts it behind text but above background */
+  pointer-events: none; /* Stops it from blocking clicks */
   opacity: 0.9;
 }
-.slash {
-  width: 4px;
-  height: 450px;
-  background: var(--lime);
-  box-shadow: 0 0 40px 10px rgba(229, 0, 0, 0.7), 0 0 80px 20px rgba(229, 0, 0, 0.3);
-  transform: rotate(15deg);
+.hollow-mask-container img {
+  width: 100%;
+  display: block;
+  transform: scaleX(-1); /* Mirrors the image horizontally */
+  mix-blend-mode: screen; /* MAGICAL TRICK: Makes the black background of the JPG invisible! */
 }
-.kanji-text {
-  writing-mode: vertical-rl;
-  font-family: 'DM Mono', monospace;
-  font-size: 140px;
-  font-weight: 900;
-  color: transparent; /* Hollow effect */
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2); /* Faint white outline */
-  letter-spacing: 20px;
-  line-height: 1;
-}
-/* ---------------------------------------------------- */
+/* ---------------------------------- */
 
 .section { padding: 110px clamp(24px, 10vw, 160px); display: grid; grid-template-columns: 180px 1fr; gap: 30px; border-bottom: 1px solid var(--line); }
 .about-copy { max-width: 760px; z-index: 2; position: relative; }
@@ -141,10 +128,8 @@ footer { background: var(--paper); padding: 22px clamp(24px, 10vw, 160px); displ
   .site-header nav, .header-cta { display: none; }
   .hero { min-height: 620px; padding-top: 70px; }
   
-  /* Scale down slash on mobile */
-  .bankai-graphic { right: -20px; opacity: 0.3; }
-  .slash { height: 350px; }
-  .kanji-text { font-size: 100px; }
+  /* Scale down mask on mobile */
+  .hollow-mask-container { width: 300px; right: -80px; }
 
   .hero h1 { margin: 65px 0; }
   .hero-bottom, .work-intro { display: block; }
