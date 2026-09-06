@@ -13,8 +13,11 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: Manr
 a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 .site-header { height: 82px; padding: 0 clamp(24px, 6vw, 96px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: relative; z-index: 2; }
-.brand { font-size: 26px; font-weight: 800; letter-spacing: -2px; }
-.brand span { color: var(--blue); }
+
+/* Signature Logo */
+.brand.signature { font-family: 'Caveat', cursive; font-size: 38px; font-weight: 700; letter-spacing: 1px; color: var(--ink); }
+.brand.signature:hover { color: var(--blue); }
+
 nav { display: flex; gap: 28px; font: 500 12px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .05em; }
 nav a:hover, .text-link:hover, .socials a:hover { color: var(--blue); }
 .header-cta { font: 500 12px 'DM Mono', monospace; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 3px; transition: color 0.3s ease, border-color 0.3s ease; }
@@ -33,9 +36,10 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--blue); }
 .scroll-link:hover span { transform: translateY(4px); }
 .text-link:hover span { transform: translateX(4px); }
 
-.orbit { position: absolute; width: 285px; height: 285px; border-radius: 50%; background: var(--lime); right: -50px; top: 120px; display: grid; place-items: center; animation: spin 18s linear infinite; }
-.orbit:before { content: ''; height: 96px; width: 96px; border-radius: 50%; background: var(--ink); }
-.orbit div { position: absolute; text-align: center; font: 500 10px 'DM Mono', monospace; letter-spacing: .14em; line-height: 1.5; }
+/* Bleach Getsuga/Bankai Element */
+.orbit { position: absolute; width: 240px; height: 240px; border-radius: 50%; background: var(--ink); right: -30px; top: 120px; display: grid; place-items: center; animation: spin 20s linear infinite; border: 2px solid rgba(240, 124, 81, 0.3); }
+.orbit .moon { position: absolute; width: 90px; height: 90px; border-radius: 50%; box-shadow: -15px 15px 0 0 var(--orange); }
+.orbit .orbit-text { position: absolute; text-align: center; font: 700 16px 'DM Mono', monospace; letter-spacing: .2em; line-height: 1.6; color: var(--paper); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .section { padding: 110px clamp(24px, 10vw, 160px); display: grid; grid-template-columns: 180px 1fr; gap: 30px; border-bottom: 1px solid var(--line); }
@@ -51,12 +55,13 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--blue); }
 .work-intro { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 45px; }
 .work-intro p { max-width: 250px; font-size: 13px; line-height: 1.6; }
 
+/* 2x2 Grid for 4 Projects */
 .project-grid { grid-column: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
 .project { cursor: pointer; }
 .project-art { height: 360px; padding: 18px; position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 .project:hover .project-art { transform: translateY(-8px); }
-.project-art > span { font: 11px 'DM Mono', monospace; }
+.project-art > span { font: 11px 'DM Mono', monospace; color: var(--ink); }
 
 .art-one { background: #c9b8ff; }
 .mini-window { width: 75%; height: 58%; background: #faf7f1; position: absolute; left: 12%; top: 22%; padding: 18px; box-shadow: 10px 12px 0 #5a4b9a; color: var(--ink); }
@@ -73,8 +78,9 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--blue); }
 .project:hover .poster { transform: rotate(0deg) scale(1.05); }
 .poster b { font-size: clamp(25px, 3vw, 42px); line-height: .78; letter-spacing: -.1em; }
 
+/* Fixed Zenith Project Card Styling */
 .art-four { background: #a8e6cf; }
-.zenith-box { width: 70%; height: 60%; background: var(--ink); position: absolute; right: 10%; bottom: 15%; padding: 24px; color: var(--lime); border-radius: 16px; border: 4px solid #fff; transition: transform 0.4s ease; }
+.zenith-box { width: 70%; height: 60%; background: var(--ink); position: absolute; right: 10%; bottom: 15%; padding: 24px; color: var(--lime); border-radius: 16px; border: 4px solid #fff; transition: transform 0.4s ease; display: block; }
 .project:hover .zenith-box { transform: scale(1.05); }
 .zenith-box i { display: block; width: 40px; height: 6px; background: var(--orange); margin-bottom: 20px; border-radius: 3px; }
 .zenith-box b { font-size: clamp(20px, 2.5vw, 36px); line-height: 1; letter-spacing: -.05em; display: block; }
