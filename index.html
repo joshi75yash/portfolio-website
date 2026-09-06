@@ -7,10 +7,11 @@
   <title>Yash Joshi | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Mono:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  
   <header class="site-header">
     <a class="brand signature" href="#home">Yash Joshi</a>
     <nav aria-label="Main navigation">
@@ -21,18 +22,20 @@
 
   <main>
     <section class="hero" id="home">
-      <p class="eyebrow">Portfolio / 2026</p>
-      <h1>Building useful<br /><em>digital solutions.</em></h1>
-      <div class="hero-bottom">
-        <p>Hi, I am <strong>Yash Joshi</strong> - a B.Tech Computer Science and Engineering student building practical, thoughtful solutions.</p>
-        <a class="scroll-link" href="#work">Explore my work <span>↓</span></a>
+      <!-- TYBW CSS Background Clash -->
+      <div class="tybw-clash" aria-hidden="true">
+        <div class="slash-red"></div>
+        <div class="slash-blue"></div>
       </div>
-      
-      <!-- Mirrored Hollow Mask emerging from the right -->
-      <div class="hollow-mask-container" aria-hidden="true">
-        <img src="wp3189332-bleach-wallpaper-ichigo-hollow-mask.jpg" alt="Hollow Mask">
+
+      <div class="hero-content">
+        <p class="eyebrow">Portfolio / 2026</p>
+        <h1>Building useful<br /><em>digital solutions.</em></h1>
+        <div class="hero-bottom">
+          <p>Hi, I am <strong>Yash Joshi</strong> - a B.Tech Computer Science and Engineering student building practical, thoughtful solutions.</p>
+          <a class="scroll-link" href="#work">Explore my work <span>↓</span></a>
+        </div>
       </div>
-      
     </section>
 
     <section class="about section" id="about">
@@ -56,27 +59,27 @@
       
       <div class="project-grid">
         
-        <!-- Project 1 (Zenith) -->
-        <a href="https://v0-task-app-enhancements.vercel.app/" target="_blank" rel="noreferrer" class="project project-four" style="display: block;">
-          <div class="project-art art-four"><span>01</span><div class="zenith-box"><i></i><b>ZENITH<br />APP</b></div></div>
+        <!-- Project 1 (Zenith - Red Faction) -->
+        <a href="https://v0-task-app-enhancements.vercel.app/" target="_blank" rel="noreferrer" class="project project-one" style="display: block;">
+          <div class="project-art faction-red"><span>01</span><div class="zenith-box"><i></i><b>ZENITH<br />APP</b></div></div>
           <div class="project-meta"><h3>Zenith Task App</h3><p>Modern UI/UX Enhancements</p></div>
         </a>
 
-        <!-- Project 2 (Evacuate) -->
-        <a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer" class="project project-one" style="display: block;">
-          <div class="project-art art-one"><span>02</span><div class="mini-window"><i></i><i></i><i></i><b>EVACUATE<br />PBL</b></div></div>
+        <!-- Project 2 (Evacuate - Blue Faction) -->
+        <a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer" class="project project-two" style="display: block;">
+          <div class="project-art faction-blue"><span>02</span><div class="mini-window"><i></i><i></i><i></i><b>EVACUATE<br />PBL</b></div></div>
           <div class="project-meta"><h3>EVACUATE-PBL</h3><p>Emergency route & crowd management</p></div>
         </a>
         
-        <!-- Project 3 (Vehicle Registration) -->
-        <a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer" class="project project-two" style="display: block;">
-          <div class="project-art art-two"><span>03</span><div class="phone"><b>Vehicle<br />Registration</b><i></i><i></i></div></div>
+        <!-- Project 3 (Vehicle - Red Faction) -->
+        <a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer" class="project project-three" style="display: block;">
+          <div class="project-art faction-red-alt"><span>03</span><div class="phone"><b>Vehicle<br />Registration</b><i></i><i></i></div></div>
           <div class="project-meta"><h3>Vehicle Registration System</h3><p>C programming / CRUD system</p></div>
         </a>
 
-        <!-- Project 4 (Portfolio Site) -->
-        <a href="https://github.com/joshi75yash/portfolio-website" target="_blank" rel="noreferrer" class="project project-three" style="display: block;">
-          <div class="project-art art-three"><span>04</span><div class="poster"><b>WEB<br />PORTFOLIO<br />SITE</b></div></div>
+        <!-- Project 4 (Portfolio - Blue Faction) -->
+        <a href="https://github.com/joshi75yash/portfolio-website" target="_blank" rel="noreferrer" class="project project-four" style="display: block;">
+          <div class="project-art faction-blue-alt"><span>04</span><div class="poster"><b>WEB<br />PORTFOLIO<br />SITE</b></div></div>
           <div class="project-meta"><h3>Personal Portfolio</h3><p>Responsive web development</p></div>
         </a>
 
@@ -87,7 +90,7 @@
       <p class="section-number">03 / CAPABILITIES</p>
       <div class="skills-wrap">
         <h2>Tools I use to bring ideas to life.</h2>
-        <ul>
+        <ul class="tybw-skills">
           <li><a href="https://github.com/joshi75yash" target="_blank" rel="noreferrer">C / C++ & Data Structures ↗</a> <span>01</span></li>
           <li><a href="https://github.com/joshi75yash/portfolio-website" target="_blank" rel="noreferrer">HTML, CSS & JavaScript ↗</a> <span>02</span></li>
           <li><a href="https://codeforces.com/profile/joshi75yash" target="_blank" rel="noreferrer">Competitive Programming ↗</a> <span>03</span></li>
@@ -108,9 +111,11 @@
       </div>
     </section>
   </main>
+  
   <footer>
     <span>© 2026 Yash Joshi</span>
-    <span>Built with care.</span>
+    <span>THOUSAND-YEAR BLOOD WAR</span>
   </footer>
+
 </body>
 </html>
