@@ -37,22 +37,26 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--lime); }
 .scroll-link:hover span { transform: translateY(4px); }
 .text-link:hover span { transform: translateX(4px); }
 
-/* --- Hollow Mask Image Styling --- */
+/* --- Hollow Mask Blending Fix --- */
 .hollow-mask-container {
   position: absolute;
-  right: -100px; /* Pulls it off the right edge so it merges in */
+  right: -250px; /* Pushed much further off the edge */
   top: 50%;
   transform: translateY(-50%);
-  width: 550px; /* Adjust size of mask */
-  z-index: 1; /* Puts it behind text but above background */
-  pointer-events: none; /* Stops it from blocking clicks */
-  opacity: 0.9;
+  width: 700px; /* Scaled up so it bleeds beautifully */
+  z-index: 1; 
+  pointer-events: none;
+  opacity: 0.18; /* Super subtle watermark opacity */
+  
+  /* MAGIC FADE: This erases the harsh left edge of the image */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+  mask-image: linear-gradient(to right, transparent 0%, black 40%);
 }
 .hollow-mask-container img {
   width: 100%;
   display: block;
-  transform: scaleX(-1); /* Mirrors the image horizontally */
-  mix-blend-mode: screen; /* MAGICAL TRICK: Makes the black background of the JPG invisible! */
+  transform: scaleX(-1);
+  mix-blend-mode: screen;
 }
 /* ---------------------------------- */
 
@@ -76,22 +80,22 @@ nav a:hover, .text-link:hover, .socials a:hover { color: var(--lime); }
 .project-art > span { font: 11px 'DM Mono', monospace; color: var(--paper); font-weight: 600; }
 
 /* Bleach Dark Mode Project Cards */
-.art-one { background: #3d3e42; } /* Dark Steel */
+.art-one { background: #3d3e42; } 
 .mini-window { width: 75%; height: 58%; background: var(--ink); position: absolute; left: 12%; top: 22%; padding: 18px; box-shadow: 10px 12px 0 #1a1a1c; color: var(--paper); }
 .mini-window i { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; display: inline-block; margin-right: 4px; }
 .mini-window b { display: block; font-size: clamp(20px, 2vw, 34px); line-height: .9; letter-spacing: -.08em; margin-top: 35px; }
 
-.art-two { background: var(--orange); } /* Ichigo Orange */
+.art-two { background: var(--orange); } 
 .phone { position: absolute; width: 145px; height: 275px; background: var(--paper); border: 7px solid var(--ink); border-radius: 22px; bottom: -25px; left: calc(50% - 72px); padding: 32px 15px; color: var(--ink); }
 .phone b { font-size: 25px; line-height: .95; letter-spacing: -.08em; }
 .phone i { display: block; width: 55px; height: 8px; background: var(--ink); border-radius: 8px; margin-top: 20px; }
 
-.art-three { background: var(--blue); } /* Spiritual Teal */
+.art-three { background: var(--blue); } 
 .poster { position: absolute; inset: 40px; background: var(--paper); padding: 28px; color: var(--ink); transform: rotate(-5deg); transition: transform 0.4s ease; }
 .project:hover .poster { transform: rotate(0deg) scale(1.05); }
 .poster b { font-size: clamp(25px, 3vw, 42px); line-height: .78; letter-spacing: -.1em; }
 
-.art-four { background: var(--lime); } /* Crimson Red Aura */
+.art-four { background: var(--lime); } 
 .zenith-box { width: 70%; height: 60%; background: var(--paper); position: absolute; right: 10%; bottom: 15%; padding: 24px; color: var(--ink); border-radius: 16px; border: 4px solid var(--ink); transition: transform 0.4s ease; display: block; }
 .project:hover .zenith-box { transform: scale(1.05); }
 .zenith-box i { display: block; width: 40px; height: 6px; background: var(--lime); margin-bottom: 20px; border-radius: 3px; }
@@ -129,7 +133,7 @@ footer { background: var(--paper); padding: 22px clamp(24px, 10vw, 160px); displ
   .hero { min-height: 620px; padding-top: 70px; }
   
   /* Scale down mask on mobile */
-  .hollow-mask-container { width: 300px; right: -80px; }
+  .hollow-mask-container { width: 450px; right: -150px; opacity: 0.15; }
 
   .hero h1 { margin: 65px 0; }
   .hero-bottom, .work-intro { display: block; }
